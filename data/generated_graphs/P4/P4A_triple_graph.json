@@ -1,0 +1,114 @@
+{
+  "nodes": [
+    {
+      "id": "Student",
+      "label": "Student",
+      "color": null
+    },
+    {
+      "id": "Assignment",
+      "label": "Assignment",
+      "color": null
+    },
+    {
+      "id": "File",
+      "label": "File",
+      "color": null
+    },
+    {
+      "id": "Comment",
+      "label": "Comment",
+      "color": null
+    },
+    {
+      "id": "System",
+      "label": "System",
+      "color": null
+    },
+    {
+      "id": "Grade",
+      "label": "Grade",
+      "color": null
+    },
+    {
+      "id": "Feedback",
+      "label": "Feedback",
+      "color": null
+    },
+    {
+      "id": "Submission Record",
+      "label": "Submission Record",
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-674f2ed64f143d55",
+      "source": "Student",
+      "target": "Assignment",
+      "label": "submit",
+      "color": null,
+      "evidence": "submit an assignment"
+    },
+    {
+      "id": "edge-75d3246effdf6fcc",
+      "source": "Student",
+      "target": "File",
+      "label": "upload",
+      "color": null,
+      "evidence": "uploading one file"
+    },
+    {
+      "id": "edge-8feda9c34c7d980f",
+      "source": "Student",
+      "target": "Comment",
+      "label": "add",
+      "color": null,
+      "evidence": "adding an optional comment"
+    },
+    {
+      "id": "edge-cc1050c03cffd526",
+      "source": "System",
+      "target": "File",
+      "label": "store",
+      "color": null,
+      "evidence": "store the file as the student’s assignment submission"
+    },
+    {
+      "id": "edge-6ca6102398943683",
+      "source": "System",
+      "target": "Grade",
+      "label": "show",
+      "color": null,
+      "evidence": "show the instructor’s grade"
+    },
+    {
+      "id": "edge-30999346bd28d4f3",
+      "source": "System",
+      "target": "Feedback",
+      "label": "show",
+      "color": null,
+      "evidence": "show the instructor’s feedback"
+    },
+    {
+      "id": "edge-51123af85bc7e45a",
+      "source": "System",
+      "target": "Submission Record",
+      "label": "mark",
+      "color": null,
+      "evidence": "Late submissions shall be marked as late"
+    },
+    {
+      "id": "edge-fa5c2cdfcb9cc2d6",
+      "source": "Student",
+      "target": "Assignment",
+      "label": "submit",
+      "color": null,
+      "evidence": "submit an assignment before the deadline"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-29T04:53:34.975491",
+    "source": "export:internal_json"
+  }
+}

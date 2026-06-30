@@ -1,0 +1,8 @@
+gap_type,description,example
+missing_condition_trigger,An if/when/unless condition is not represented as a graph structure.,Outside building hours or projector requested condition.
+missing_precondition_or_temporal_order,"Only-after, before, or after constraints are missing or only implied.",Payment charged only after inventory availability is verified.
+missing_exception_or_alternative_path,Exception branches or alternative choices are absent or incomplete.,Projector unavailable -> reserve room without projector or choose another time.
+argument_omission,A predicate is present but a required target/object/scope argument is missing.,"Submission record linked, but not linked to every team member."
+scope_under_specification,"Team-level, each/every, selected, or specific-member scope is not explicit.",Team grade shown to each team member.
+negative_constraint_missing,A not/except/not separately constraint is missing.,Late status not applied separately to each team member.
+ontology_comparison_instability,"Ontology-compatible output uses useful vocabulary but is too sparse, compact, or unbalanced for reliable direct comparison.",Ontology graph captures a term but misses the version-level change relation.

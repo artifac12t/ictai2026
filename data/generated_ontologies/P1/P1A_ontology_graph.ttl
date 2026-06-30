@@ -1,0 +1,71 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:CampusEvent a owl:Class ;
+    rdfs:label "Campus Event" .
+
+ex:GeneratedOntology a owl:Ontology .
+
+ex:checksAvailability a owl:ObjectProperty ;
+    rdfs:label "checks availability" ;
+    rdfs:domain ex:RoomReservationRequest ;
+    rdfs:range ex:Room .
+
+ex:hasRequestedRoom a owl:ObjectProperty ;
+    rdfs:label "has requested room" ;
+    rdfs:domain ex:RoomReservationRequest ;
+    rdfs:range ex:Room .
+
+ex:sendsEmailConfirmation a owl:ObjectProperty ;
+    rdfs:label "sends email confirmation" ;
+    rdfs:domain ex:RoomReservationRequest ;
+    rdfs:range ex:EmailConfirmation .
+
+ex:sentOnlyAfter a owl:ObjectProperty ;
+    rdfs:label "sent only after" ;
+    rdfs:domain ex:EmailConfirmation ;
+    rdfs:range ex:Room .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "submits" ;
+    rdfs:domain ex:StudentOrganizationOfficer ;
+    rdfs:range ex:RoomReservationRequest .
+
+ex:StudentOrganizationOfficer a owl:Class ;
+    rdfs:label "Student Organization Officer" ;
+    ex:submits ex:RoomReservationRequest .
+
+ex:hasEndTime a owl:DatatypeProperty ;
+    rdfs:label "has end time" .
+
+ex:hasEventTitle a owl:DatatypeProperty ;
+    rdfs:label "has event title" .
+
+ex:hasExpectedAttendees a owl:DatatypeProperty ;
+    rdfs:label "has expected attendees" .
+
+ex:hasStartTime a owl:DatatypeProperty ;
+    rdfs:label "has start time" .
+
+ex:isAvailable a owl:DatatypeProperty ;
+    rdfs:label "is available" .
+
+ex:EmailConfirmation a owl:Class ;
+    rdfs:label "Email Confirmation" ;
+    ex:sentOnlyAfter ex:Room .
+
+ex:RoomReservationRequest a owl:Class ;
+    rdfs:label "Room Reservation Request" ;
+    ex:checksAvailability ex:Room ;
+    ex:hasEndTime ex:hasEndTime ;
+    ex:hasEventTitle ex:hasEventTitle ;
+    ex:hasExpectedAttendees ex:hasExpectedAttendees ;
+    ex:hasRequestedRoom ex:Room ;
+    ex:hasStartTime ex:hasStartTime ;
+    ex:sendsEmailConfirmation ex:EmailConfirmation .
+
+ex:Room a owl:Class ;
+    rdfs:label "Room" ;
+    ex:isAvailable ex:isAvailable .
+

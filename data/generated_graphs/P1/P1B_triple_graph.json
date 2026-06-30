@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "Student Organization Officer",
+      "label": "Student Organization Officer",
+      "color": null
+    },
+    {
+      "id": "Room Reservation Request",
+      "label": "Room Reservation Request",
+      "color": null
+    },
+    {
+      "id": "Event Title",
+      "label": "Event Title",
+      "color": null
+    },
+    {
+      "id": "Requested Room",
+      "label": "Requested Room",
+      "color": null
+    },
+    {
+      "id": "Expected Number of Attendees",
+      "label": "Expected Number of Attendees",
+      "color": null
+    },
+    {
+      "id": "Event Start and End Time",
+      "label": "Event Start and End Time",
+      "color": null
+    },
+    {
+      "id": "System",
+      "label": "System",
+      "color": null
+    },
+    {
+      "id": "Department Coordinator",
+      "label": "Department Coordinator",
+      "color": null
+    },
+    {
+      "id": "Approval",
+      "label": "Approval",
+      "color": null
+    },
+    {
+      "id": "Email Confirmation",
+      "label": "Email Confirmation",
+      "color": null
+    },
+    {
+      "id": "Room Availability",
+      "label": "Room Availability",
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-7273b22c533382d4",
+      "source": "Student Organization Officer",
+      "target": "Room Reservation Request",
+      "label": "submit",
+      "color": null,
+      "evidence": "allow a student organization officer to submit a room reservation request"
+    },
+    {
+      "id": "edge-199470414dd8623e",
+      "source": "Room Reservation Request",
+      "target": "Event Title",
+      "label": "include",
+      "color": null,
+      "evidence": "The request shall include the event title"
+    },
+    {
+      "id": "edge-a1a27441477f8f22",
+      "source": "Room Reservation Request",
+      "target": "Requested Room",
+      "label": "include",
+      "color": null,
+      "evidence": "The request shall include the requested room"
+    },
+    {
+      "id": "edge-dde655e20526286a",
+      "source": "Room Reservation Request",
+      "target": "Expected Number of Attendees",
+      "label": "include",
+      "color": null,
+      "evidence": "The request shall include the expected number of attendees"
+    },
+    {
+      "id": "edge-291c0a0947328fb7",
+      "source": "Room Reservation Request",
+      "target": "Event Start and End Time",
+      "label": "include",
+      "color": null,
+      "evidence": "The request shall include the event start and end time"
+    },
+    {
+      "id": "edge-354a72ba1c439367",
+      "source": "System",
+      "target": "Department Coordinator",
+      "label": "route",
+      "color": null,
+      "evidence": "the system shall route the request to the department coordinator for approval"
+    },
+    {
+      "id": "edge-1af882dd081cd4be",
+      "source": "Department Coordinator",
+      "target": "Approval",
+      "label": "grant",
+      "color": null,
+      "evidence": "the system shall route the request to the department coordinator for approval"
+    },
+    {
+      "id": "edge-abe4890df1a42f4e",
+      "source": "System",
+      "target": "Email Confirmation",
+      "label": "send",
+      "color": null,
+      "evidence": "The system shall send the email confirmation only after the room is available and the required approval has been granted"
+    },
+    {
+      "id": "edge-ee5d8683e152a342",
+      "source": "System",
+      "target": "Room Availability",
+      "label": "check",
+      "color": null,
+      "evidence": "The system shall send the email confirmation only after the room is available"
+    },
+    {
+      "id": "edge-c035a7b505acb864",
+      "source": "System",
+      "target": "Approval",
+      "label": "check",
+      "color": null,
+      "evidence": "The system shall send the email confirmation only after the required approval has been granted"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-29T00:52:09.013937",
+    "source": "export:internal_json"
+  }
+}

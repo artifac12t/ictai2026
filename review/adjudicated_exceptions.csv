@@ -1,0 +1,7 @@
+reviewer,item_id,section,proposed_issue,final_adjudication,rationale
+Evaluator 1,P1-C05,reference_change,ontology detection too harsh,ontology_detection=partial,Approval-granted precondition appears in ontology; room-available conjunct remains incomplete.
+Evaluator 1,P2-C02,reference_change,triple detection too harsh,triple_detection=partial,Trigger conditions appear in edge evidence but not as explicit condition nodes.
+Evaluator 1,P5-C06,reference_change,triple/ontology detection too harsh,triple_detection=partial; ontology_detection=partial,Describe/resources semantics appear but confirmation-message subject and reserved-resources object are incomplete.
+Evaluator 1,P5-Q11,raw_triple_audit,duplicate with P5-Q08,merged_into=P5-Q08,Avoids double-counting the confirmation-message/resource-description issue.
+Evaluator 2,P2-C04,reference_change,ontology detection too generous,ontology_detection=missed,Notification vocabulary alone does not surface the version-level timing/precondition change.
+Evaluator 2,P5-C06,reference_change,ontology detection too harsh,ontology_detection=partial,Consistent with Evaluator 1; ontology partially captures confirmation/resource description.

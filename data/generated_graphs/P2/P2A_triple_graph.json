@@ -1,0 +1,101 @@
+{
+  "nodes": [
+    {
+      "id": "Employee",
+      "label": "Employee",
+      "color": null
+    },
+    {
+      "id": "IT Support Ticket",
+      "label": "IT Support Ticket",
+      "color": null
+    },
+    {
+      "id": "Problem Description",
+      "label": "Problem Description",
+      "color": null
+    },
+    {
+      "id": "Device Type",
+      "label": "Device Type",
+      "color": null
+    },
+    {
+      "id": "Screenshots",
+      "label": "Screenshots",
+      "color": null
+    },
+    {
+      "id": "System",
+      "label": "System",
+      "color": null
+    },
+    {
+      "id": "Ticket History",
+      "label": "Ticket History",
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-712ca58f02303c6f",
+      "source": "Employee",
+      "target": "IT Support Ticket",
+      "label": "submit",
+      "color": null,
+      "evidence": "submit an IT support ticket"
+    },
+    {
+      "id": "edge-ffc12bd4889b3d27",
+      "source": "IT Support Ticket",
+      "target": "Problem Description",
+      "label": "include",
+      "color": null,
+      "evidence": "entering a problem description"
+    },
+    {
+      "id": "edge-77f35c5596b27bec",
+      "source": "IT Support Ticket",
+      "target": "Device Type",
+      "label": "include",
+      "color": null,
+      "evidence": "selecting a device type"
+    },
+    {
+      "id": "edge-4c63c467fd75b22c",
+      "source": "IT Support Ticket",
+      "target": "Screenshots",
+      "label": "include",
+      "color": null,
+      "evidence": "attaching optional screenshots"
+    },
+    {
+      "id": "edge-9b05eb321de88dfb",
+      "source": "System",
+      "target": "IT Support Ticket",
+      "label": "assign",
+      "color": null,
+      "evidence": "assign it to an available support technician"
+    },
+    {
+      "id": "edge-968dec1e70536dbb",
+      "source": "System",
+      "target": "Employee",
+      "label": "notify",
+      "color": null,
+      "evidence": "notify the employee when the technician marks the ticket as resolved"
+    },
+    {
+      "id": "edge-e8e6585f5d9289ab",
+      "source": "System",
+      "target": "Ticket History",
+      "label": "store",
+      "color": null,
+      "evidence": "store the ticket history for future reference"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-29T02:09:34.922904",
+    "source": "export:internal_json"
+  }
+}

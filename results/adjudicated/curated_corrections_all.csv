@@ -1,0 +1,47 @@
+case_id,correction_id,curated_structure,decision,rationale
+P1,P1-D01,outside_building_hours_condition -> triggers -> approval_requirement,yes,Add explicit conditional trigger.
+P1,P1-D02,attendance_exceeds_room_capacity_condition -> triggers -> approval_requirement,yes,Add explicit capacity-triggered approval condition.
+P1,P1-D03,approval_requirement -> applies_to -> room_reservation_request,yes,Connect approval requirement to the request.
+P1,P1-D04,system -> routes -> room_reservation_request_to_department_coordinator,yes,Make the routed object explicit.
+P1,P1-D05,department_coordinator -> reviews_or_approves -> room_reservation_request,yes,Represent coordinator role in the approval process.
+P1,P1-D06,send_email_confirmation_action -> has_precondition -> room_available_state,yes,Add room-available precondition.
+P1,P1-D07,send_email_confirmation_action -> has_precondition -> approval_granted_event,yes,Add approval-granted precondition.
+P1,P1-D08,system -> performs -> send_email_confirmation_action,yes,Represent confirmation sending as an action node.
+P2,P2-D01,account_access_issue_condition -> triggers -> security_routing_requirement,yes,Make trigger condition explicit.
+P2,P2-D02,suspicious_email_condition -> triggers -> security_routing_requirement,yes,Make trigger condition explicit.
+P2,P2-D03,data_exposure_condition -> triggers -> security_routing_requirement,yes,Make trigger condition explicit.
+P2,P2-D04,security_routing_requirement -> applies_to -> it_support_ticket,yes,Connect routing requirement to ticket.
+P2,P2-D05,system -> routes -> it_support_ticket_to_security_team,yes,Make ticket-as-routed-object explicit.
+P2,P2-D06,security_team -> completes -> security_review,yes,Add review-completion event.
+P2,P2-D07,security_team -> transfers_back -> it_support_ticket_to_general_support,yes,Add transfer-back event.
+P2,P2-D08,notify_employee_action -> has_precondition -> security_review_completed_event,yes,Add notification precondition.
+P2,P2-D09,notify_employee_action -> has_precondition -> ticket_transferred_back_event,yes,Add alternative notification precondition.
+P3,P3-D01,customer_submit_order_event -> triggers -> create_pending_order_record_action,yes,Add submit-to-pending-order causal/order relation.
+P3,P3-D02,system -> creates -> pending_order_record,no / already captured,Do not count as correction because raw graph already captured it.
+P3,P3-D03,system -> reserves -> selected_products,yes,Make selected-products scope explicit.
+P3,P3-D04,system -> checks -> selected_products_availability,yes,Make availability check scope explicit.
+P3,P3-D05,products_confirmed_available_state -> has_precondition_for -> charge_payment_action,yes,Add payment precondition.
+P3,P3-D06,system -> performs -> charge_payment_action,yes,Represent payment charge as an action.
+P3,P3-D07,unavailable_products_condition -> triggers -> order_revision_request,yes,Add exception-path trigger.
+P3,P3-D08,order_revision_request -> must_occur_before -> charge_payment_action,yes / revised,Use must_occur_before instead of generic precedes.
+P3,P3-D09,payment_completed_event -> has_precondition_for -> send_final_receipt_action,yes,Add receipt precondition.
+P3,P3-D10,system -> performs -> send_final_receipt_action,yes,Represent final receipt sending as action.
+P4,P4-D01,student_team -> submits -> team_assignment_submission,yes,Make team-level submission artifact explicit.
+P4,P4-D02,team_assignment_submission -> includes -> shared_file,yes,Represent shared file scope.
+P4,P4-D03,team_assignment_submission -> includes -> optional_comment,yes,Represent optional comment in team submission.
+P4,P4-D04,system -> stores -> file_as_team_submission,yes,Represent team-submission storage semantics.
+P4,P4-D05,team_submission_record -> linked_to_each -> team_member,yes,Add every-member target.
+P4,P4-D06,system -> shows -> team_grade_and_feedback_to_each_team_member,yes,Add recipient scope.
+P4,P4-D07,individual_override_grade -> applies_to -> specific_team_member,yes,Add exception relation.
+P4,P4-D08,late_status -> applies_to -> team_submission_record,yes,Add team-record late status.
+P4,P4-D09,late_status -> not_applied_separately_to -> individual_team_member,yes,Add negative constraint.
+P5,P5-D01,projector_request_condition -> triggers -> projector_availability_check,yes,Add projector-requested condition.
+P5,P5-D02,projector_request_condition -> triggers -> room_availability_check,yes,Add room-availability condition under projector request.
+P5,P5-D03,room_availability_check -> has_precondition_for -> create_reservation_action,yes,Add room-availability precondition.
+P5,P5-D04,projector_availability_check -> has_precondition_for -> create_reservation_action,yes,Add projector-availability precondition.
+P5,P5-D05,projector_unavailable_condition -> triggers -> alternative_options,yes,Add exception-path trigger.
+P5,P5-D06,alternative_options -> include -> reserve_room_without_projector,yes,Add first alternative.
+P5,P5-D07,alternative_options -> include -> choose_different_time_slot,yes,Add second alternative.
+P5,P5-D08,confirmation_message -> describes -> reserved_resources,yes,Add confirmation-resource semantics.
+P5,P5-D09,reserved_resources -> may_include -> study_room,yes,Add room as possible reserved resource.
+P5,P5-D10,reserved_resources -> may_include -> projector,yes,Add projector as possible reserved resource.

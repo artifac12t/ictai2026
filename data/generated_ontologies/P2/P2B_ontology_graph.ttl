@@ -1,0 +1,92 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:GeneratedOntology a owl:Ontology ;
+    rdfs:label "Generated Ontology" .
+
+ex:SupportTechnician a owl:Class ;
+    rdfs:label "Support Technician" .
+
+ex:assignsTo a owl:ObjectProperty ;
+    rdfs:label "Assigns To" .
+
+ex:completesReview a owl:ObjectProperty ;
+    rdfs:label "Completes Review" .
+
+ex:hasDeviceType a owl:DatatypeProperty ;
+    rdfs:label "Has Device Type" .
+
+ex:hasProblemDescription a owl:DatatypeProperty ;
+    rdfs:label "Has Problem Description" .
+
+ex:hasRequiredField a owl:ObjectProperty ;
+    rdfs:label "Has Required Field" .
+
+ex:hasScreenshot a owl:DatatypeProperty ;
+    rdfs:label "Has Screenshot" .
+
+ex:markedAs a owl:ObjectProperty ;
+    rdfs:label "Marked As" .
+
+ex:notifies a owl:ObjectProperty ;
+    rdfs:label "Notifies" .
+
+ex:routesTo a owl:ObjectProperty ;
+    rdfs:label "Routes To" .
+
+ex:stores a owl:ObjectProperty ;
+    rdfs:label "Stores" .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "Submits" .
+
+ex:transfersBack a owl:ObjectProperty ;
+    rdfs:label "Transfers Back" .
+
+ex:AccountAccessIssue a owl:Class ;
+    rdfs:label "Account Access Issue" .
+
+ex:DataExposure a owl:Class ;
+    rdfs:label "Data Exposure" .
+
+ex:DeviceType a owl:Class ;
+    rdfs:label "Device Type" .
+
+ex:Employee a owl:Class ;
+    rdfs:label "Employee" ;
+    ex:submits ex:ITSupportTicket .
+
+ex:ProblemDescription a owl:Class ;
+    rdfs:label "Problem Description" .
+
+ex:Screenshot a owl:Class ;
+    rdfs:label "Screenshot" .
+
+ex:SecurityTeam a owl:Class ;
+    rdfs:label "Security Team" ;
+    ex:completesReview ex:SecurityReviewRecord ;
+    ex:notifies ex:Employee ;
+    ex:transfersBack ex:ITSupportTicket .
+
+ex:SuspiciousEmail a owl:Class ;
+    rdfs:label "Suspicious Email" .
+
+ex:TicketHistory a owl:Class ;
+    rdfs:label "Ticket History" .
+
+ex:ITSupportTicket a owl:Class ;
+    rdfs:label "IT Support Ticket" ;
+    ex:hasRequiredField ex:DeviceType,
+        ex:ProblemDescription ;
+    ex:hasScreenshot ex:Screenshot ;
+    ex:markedAs ex:AccountAccessIssue,
+        ex:DataExposure,
+        ex:SuspiciousEmail ;
+    ex:routesTo ex:SecurityTeam ;
+    ex:stores ex:SecurityReviewRecord,
+        ex:TicketHistory .
+
+ex:SecurityReviewRecord a owl:Class ;
+    rdfs:label "Security Review Record" .
+

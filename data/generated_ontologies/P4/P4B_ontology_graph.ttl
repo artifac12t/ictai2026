@@ -1,0 +1,76 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:GeneratedOntology a owl:Ontology ;
+    rdfs:label "Generated Ontology" .
+
+ex:Instructor a owl:Class ;
+    rdfs:label "Instructor" ;
+    ex:assigns ex:IndividualOverrideGrade .
+
+ex:StudentTeam a owl:Class ;
+    rdfs:label "Student Team" ;
+    ex:submits ex:AssignmentSubmission .
+
+ex:assigns a owl:ObjectProperty ;
+    rdfs:label "assigns" .
+
+ex:hasFeedback a owl:DatatypeProperty ;
+    rdfs:label "has feedback" .
+
+ex:hasGrade a owl:DatatypeProperty ;
+    rdfs:label "has grade" .
+
+ex:hasRequiredField a owl:ObjectProperty ;
+    rdfs:label "has required field" .
+
+ex:links a owl:ObjectProperty ;
+    rdfs:label "links" .
+
+ex:marks a owl:ObjectProperty ;
+    rdfs:label "marks" .
+
+ex:shows a owl:ObjectProperty ;
+    rdfs:label "shows" .
+
+ex:stores a owl:ObjectProperty ;
+    rdfs:label "stores" .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "submits" .
+
+ex:AssignmentSubmission a owl:Class ;
+    rdfs:label "Assignment Submission" ;
+    ex:hasRequiredField ex:hasComment,
+        ex:hasFile ;
+    ex:stores ex:SubmissionRecord .
+
+ex:Feedback a owl:Class ;
+    rdfs:label "Feedback" .
+
+ex:Grade a owl:Class ;
+    rdfs:label "Grade" .
+
+ex:IndividualOverrideGrade a owl:Class ;
+    rdfs:label "Individual Override Grade" .
+
+ex:SubmissionRecord a owl:Class ;
+    rdfs:label "Submission Record" ;
+    ex:links ex:TeamMember ;
+    ex:marks ex:isLate ;
+    ex:shows ex:Feedback,
+        ex:Grade .
+
+ex:TeamMember a owl:Class ;
+    rdfs:label "Team Member" .
+
+ex:hasComment a owl:DatatypeProperty ;
+    rdfs:label "has comment" .
+
+ex:hasFile a owl:DatatypeProperty ;
+    rdfs:label "has file" .
+
+ex:isLate a owl:DatatypeProperty ;
+    rdfs:label "is late" .
+

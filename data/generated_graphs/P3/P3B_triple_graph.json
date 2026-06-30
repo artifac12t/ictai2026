@@ -1,0 +1,136 @@
+{
+  "nodes": [
+    {
+      "id": "Customer",
+      "label": "Customer",
+      "color": null
+    },
+    {
+      "id": "Online Order",
+      "label": "Online Order",
+      "color": null
+    },
+    {
+      "id": "Product",
+      "label": "Product",
+      "color": null
+    },
+    {
+      "id": "Shipping Address",
+      "label": "Shipping Address",
+      "color": null
+    },
+    {
+      "id": "Saved Payment Method",
+      "label": "Saved Payment Method",
+      "color": null
+    },
+    {
+      "id": "System",
+      "label": "System",
+      "color": null
+    },
+    {
+      "id": "Pending Order Record",
+      "label": "Pending Order Record",
+      "color": null
+    },
+    {
+      "id": "Inventory Availability",
+      "label": "Inventory Availability",
+      "color": null
+    },
+    {
+      "id": "Order Receipt",
+      "label": "Order Receipt",
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-378af35b4accadd2",
+      "source": "Customer",
+      "target": "Online Order",
+      "label": "place",
+      "color": null,
+      "evidence": "allow a customer to place an online order"
+    },
+    {
+      "id": "edge-7ae0380192b4dc63",
+      "source": "Online Order",
+      "target": "Product",
+      "label": "include",
+      "color": null,
+      "evidence": "selecting products"
+    },
+    {
+      "id": "edge-eed0041846398e7d",
+      "source": "Online Order",
+      "target": "Shipping Address",
+      "label": "include",
+      "color": null,
+      "evidence": "entering a shipping address"
+    },
+    {
+      "id": "edge-681c6e1adc7bd7b7",
+      "source": "Online Order",
+      "target": "Saved Payment Method",
+      "label": "include",
+      "color": null,
+      "evidence": "choosing a saved payment method"
+    },
+    {
+      "id": "edge-276bcc1a1617023c",
+      "source": "System",
+      "target": "Pending Order Record",
+      "label": "create",
+      "color": null,
+      "evidence": "create a pending order record"
+    },
+    {
+      "id": "edge-a14597f40982dfcb",
+      "source": "System",
+      "target": "Product",
+      "label": "reserve",
+      "color": null,
+      "evidence": "reserve the selected products"
+    },
+    {
+      "id": "edge-d9c8b82be5e3503f",
+      "source": "System",
+      "target": "Inventory Availability",
+      "label": "check",
+      "color": null,
+      "evidence": "inventory availability is checked"
+    },
+    {
+      "id": "edge-ddefbfc987bf46b5",
+      "source": "System",
+      "target": "Saved Payment Method",
+      "label": "charge",
+      "color": null,
+      "evidence": "charge the saved payment method"
+    },
+    {
+      "id": "edge-b450fbec926a4795",
+      "source": "System",
+      "target": "Customer",
+      "label": "ask",
+      "color": null,
+      "evidence": "ask the customer to revise the order"
+    },
+    {
+      "id": "edge-6e63ff2012a85b69",
+      "source": "System",
+      "target": "Order Receipt",
+      "label": "send",
+      "color": null,
+      "evidence": "send only after payment is completed"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-29T03:37:56.263991",
+    "source": "export:internal_json",
+    "graphKind": "triple"
+  }
+}

@@ -1,0 +1,1 @@
+The system shall allow a student to reserve a library study room for a selected date and time slot. The student shall choose the room size, enter the number of participants, and provide a contact email address. After the system confirms that the room is available, it shall create the room reservation and send a confirmation message to the student.

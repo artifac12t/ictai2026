@@ -1,0 +1,6 @@
+case_id,case_name,raw_audit_items,correctness_yes,correctness_partial,correctness_missing,completeness_complete,completeness_partial,completeness_missing,curated_corrections
+P1,Campus room reservation,8,4,2,2,0,6,2,8
+P2,IT support ticket,8,6,0,2,1,5,2,9
+P3,Online order,10,8,0,2,1,7,2,10
+P4,Assignment submission,10,6,2,2,0,8,2,9
+P5,Library study room,10,7,1,2,0,8,2,10

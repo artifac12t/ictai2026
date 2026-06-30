@@ -1,0 +1,196 @@
+{
+  "nodes": [
+    {
+      "id": "System",
+      "label": "System",
+      "color": null
+    },
+    {
+      "id": "Student",
+      "label": "Student",
+      "color": null
+    },
+    {
+      "id": "Library Study Room",
+      "label": "Library Study Room",
+      "color": null
+    },
+    {
+      "id": "Date",
+      "label": "Date",
+      "color": null
+    },
+    {
+      "id": "Time Slot",
+      "label": "Time Slot",
+      "color": null
+    },
+    {
+      "id": "Room Size",
+      "label": "Room Size",
+      "color": null
+    },
+    {
+      "id": "Number of Participants",
+      "label": "Number of Participants",
+      "color": null
+    },
+    {
+      "id": "Contact Email Address",
+      "label": "Contact Email Address",
+      "color": null
+    },
+    {
+      "id": "Projector",
+      "label": "Projector",
+      "color": null
+    },
+    {
+      "id": "Room Availability",
+      "label": "Room Availability",
+      "color": null
+    },
+    {
+      "id": "Projector Availability",
+      "label": "Projector Availability",
+      "color": null
+    },
+    {
+      "id": "Reservation",
+      "label": "Reservation",
+      "color": null
+    },
+    {
+      "id": "Resources",
+      "label": "Resources",
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-e0a499b265346444",
+      "source": "System",
+      "target": "Student",
+      "label": "allow",
+      "color": null,
+      "evidence": "The system shall allow a student"
+    },
+    {
+      "id": "edge-c811519bc4c6ade7",
+      "source": "Student",
+      "target": "Library Study Room",
+      "label": "reserve",
+      "color": null,
+      "evidence": "reserve a library study room"
+    },
+    {
+      "id": "edge-b279780e339d9613",
+      "source": "Student",
+      "target": "Date",
+      "label": "select",
+      "color": null,
+      "evidence": "reserve a library study room for a selected date"
+    },
+    {
+      "id": "edge-e0390c75ffe4c46b",
+      "source": "Student",
+      "target": "Time Slot",
+      "label": "select",
+      "color": null,
+      "evidence": "reserve a library study room for a selected date and time slot"
+    },
+    {
+      "id": "edge-0dbd99391863c78b",
+      "source": "Student",
+      "target": "Room Size",
+      "label": "choose",
+      "color": null,
+      "evidence": "The student shall choose the room size"
+    },
+    {
+      "id": "edge-6eca0e5ea9870933",
+      "source": "Student",
+      "target": "Number of Participants",
+      "label": "enter",
+      "color": null,
+      "evidence": "enter the number of participants"
+    },
+    {
+      "id": "edge-987920ff3f3c4edf",
+      "source": "Student",
+      "target": "Contact Email Address",
+      "label": "provide",
+      "color": null,
+      "evidence": "provide a contact email address"
+    },
+    {
+      "id": "edge-d6b6e6d5a88e67da",
+      "source": "Student",
+      "target": "Projector",
+      "label": "request",
+      "color": null,
+      "evidence": "optionally request a projector"
+    },
+    {
+      "id": "edge-ee5d8683e152a342",
+      "source": "System",
+      "target": "Room Availability",
+      "label": "check",
+      "color": null,
+      "evidence": "check both room availability and projector availability"
+    },
+    {
+      "id": "edge-644a0a9d41b9d83a",
+      "source": "System",
+      "target": "Projector Availability",
+      "label": "check",
+      "color": null,
+      "evidence": "check both room availability and projector availability"
+    },
+    {
+      "id": "edge-39ad6f86321f64f1",
+      "source": "System",
+      "target": "Reservation",
+      "label": "create",
+      "color": null,
+      "evidence": "before creating the reservation"
+    },
+    {
+      "id": "edge-8259b1c700447d9b",
+      "source": "System",
+      "target": "Student",
+      "label": "offer",
+      "color": null,
+      "evidence": "the system shall offer the student the option"
+    },
+    {
+      "id": "edge-6100c2f6b9587509",
+      "source": "System",
+      "target": "Library Study Room",
+      "label": "reserve",
+      "color": null,
+      "evidence": "reserve the room without the projector"
+    },
+    {
+      "id": "edge-d01cb6a1bda424c8",
+      "source": "Student",
+      "target": "Time Slot",
+      "label": "choose",
+      "color": null,
+      "evidence": "choose a different time slot"
+    },
+    {
+      "id": "edge-1bca189469e9751b",
+      "source": "System",
+      "target": "Resources",
+      "label": "describe",
+      "color": null,
+      "evidence": "The confirmation message shall describe which resources were reserved"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-29T05:51:44.750311",
+    "source": "export:internal_json",
+    "graphKind": "triple"
+  }
+}

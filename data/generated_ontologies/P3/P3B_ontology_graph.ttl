@@ -1,0 +1,67 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Customer a owl:Class ;
+    rdfs:label "Customer" ;
+    ex:submits ex:OnlineOrder .
+
+ex:GeneratedOntology a owl:Ontology .
+
+ex:ShippingAddress a owl:Class ;
+    rdfs:label "Shipping Address" .
+
+ex:asksToRevise a owl:ObjectProperty ;
+    rdfs:label "Asks To Revise" .
+
+ex:charges a owl:ObjectProperty ;
+    rdfs:label "Charges" .
+
+ex:checksAvailability a owl:ObjectProperty ;
+    rdfs:label "Checks Availability" .
+
+ex:creates a owl:ObjectProperty ;
+    rdfs:label "Creates" .
+
+ex:hasRequiredField a owl:DatatypeProperty ;
+    rdfs:label "Has Required Field" .
+
+ex:reserves a owl:ObjectProperty ;
+    rdfs:label "Reserves" .
+
+ex:sends a owl:ObjectProperty ;
+    rdfs:label "Sends" .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "Submits" .
+
+ex:InventoryCheck a owl:Class ;
+    rdfs:label "Inventory Check" ;
+    ex:asksToRevise ex:OrderRevisionRequest ;
+    ex:charges ex:PaymentMethod .
+
+ex:OnlineOrder a owl:Class ;
+    rdfs:label "Online Order" ;
+    ex:creates ex:PendingOrderRecord ;
+    ex:hasRequiredField "Payment Method"^^xsd:string,
+        "Shipping Address"^^xsd:string .
+
+ex:OrderReceipt a owl:Class ;
+    rdfs:label "Order Receipt" .
+
+ex:OrderRevisionRequest a owl:Class ;
+    rdfs:label "Order Revision Request" .
+
+ex:PaymentMethod a owl:Class ;
+    rdfs:label "Payment Method" ;
+    ex:sends ex:OrderReceipt .
+
+ex:PendingOrderRecord a owl:Class ;
+    rdfs:label "Pending Order Record" ;
+    ex:checksAvailability ex:InventoryCheck ;
+    ex:reserves ex:Product .
+
+ex:Product a owl:Class ;
+    rdfs:label "Product" .
+

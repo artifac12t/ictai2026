@@ -1,0 +1,67 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:DeviceType a owl:Class ;
+    rdfs:label "Device Type" .
+
+ex:Employee a owl:Class ;
+    rdfs:label "Employee" ;
+    ex:submits ex:ITSupportTicket .
+
+ex:GeneratedOntology a owl:Ontology ;
+    rdfs:label "Generated Ontology" .
+
+ex:ProblemDescription a owl:Class ;
+    rdfs:label "Problem Description" .
+
+ex:Screenshot a owl:Class ;
+    rdfs:label "Screenshot" .
+
+ex:assigns a owl:ObjectProperty ;
+    rdfs:label "Assigns" .
+
+ex:hasDeviceType a owl:DatatypeProperty ;
+    rdfs:label "Has Device Type" .
+
+ex:hasProblemDescription a owl:DatatypeProperty ;
+    rdfs:label "Has Problem Description" .
+
+ex:hasScreenshot a owl:ObjectProperty ;
+    rdfs:label "Has Screenshot" .
+
+ex:marksAsResolved a owl:ObjectProperty ;
+    rdfs:label "Marks As Resolved" .
+
+ex:notifies a owl:ObjectProperty ;
+    rdfs:label "Notifies" .
+
+ex:stores a owl:ObjectProperty ;
+    rdfs:label "Stores" .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "Submits" .
+
+ex:ResolutionNotification a owl:Class ;
+    rdfs:label "Resolution Notification" .
+
+ex:SupportTechnician a owl:Class ;
+    rdfs:label "Support Technician" ;
+    ex:marksAsResolved ex:ITSupportTicket .
+
+ex:TicketHistory a owl:Class ;
+    rdfs:label "Ticket History" .
+
+ex:ITSupportTicket a owl:Class ;
+    rdfs:label "IT Support Ticket" ;
+    ex:assigns ex:SupportTechnician ;
+    ex:notifies ex:ResolutionNotification ;
+    ex:stores ex:TicketHistory ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:cardinality 1 ],
+        [ a owl:Class ;
+            owl:cardinality 1 ],
+        [ a owl:Class ;
+            owl:maxCardinality 1 ] .
+

@@ -1,0 +1,6 @@
+case_id,case_name,reference_changes,triple_detected,triple_partial,triple_missed,ontology_detected,ontology_partial,ontology_missed
+P1,Campus room reservation,6,3,1,2,0,4,2
+P2,IT support ticket,6,2,4,0,1,4,1
+P3,Online order,8,3,4,1,0,7,1
+P4,Assignment submission,8,1,6,1,0,8,0
+P5,Library study room,7,3,4,0,0,7,0

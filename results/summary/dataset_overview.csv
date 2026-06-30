@@ -1,0 +1,6 @@
+case_id,scenario,words_A,words_B,reference_changes,semantic_challenge
+P1,Campus room reservation,67,93,6,Approval conditions and confirmation preconditions
+P2,IT support ticket,63,99,6,"Security triggers, routing, review/transfer timing"
+P3,Online order,66,99,8,Inventory/payment timing and exception paths
+P4,Assignment submission,66,94,8,"Team scope, override exception, negative constraint"
+P5,Library study room,60,100,7,"Projector condition, resource availability, alternatives"

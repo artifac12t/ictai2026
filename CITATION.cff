@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: OntologyWeb ICTAI 2026 Evaluation Artifact
+message: If you use this artifact, please cite the associated OntologyWeb paper.
+type: dataset
+authors:
+  - family-names: Yue
+    given-names: Songhui
+repository-code: https://github.com/artifac12t/ictai2026

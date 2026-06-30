@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "System",
+      "label": "System",
+      "color": null
+    },
+    {
+      "id": "Student Organization Officer",
+      "label": "Student Organization Officer",
+      "color": null
+    },
+    {
+      "id": "Room Reservation Request",
+      "label": "Room Reservation Request",
+      "color": null
+    },
+    {
+      "id": "Event Title",
+      "label": "Event Title",
+      "color": null
+    },
+    {
+      "id": "Requested Room",
+      "label": "Requested Room",
+      "color": null
+    },
+    {
+      "id": "Expected Number of Attendees",
+      "label": "Expected Number of Attendees",
+      "color": null
+    },
+    {
+      "id": "Event Start and End Time",
+      "label": "Event Start and End Time",
+      "color": null
+    },
+    {
+      "id": "Room Availability",
+      "label": "Room Availability",
+      "color": null
+    },
+    {
+      "id": "Email Confirmation",
+      "label": "Email Confirmation",
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-69632d75081d35e1",
+      "source": "System",
+      "target": "Student Organization Officer",
+      "label": "allow",
+      "color": null,
+      "evidence": "allow a student organization officer to submit a room reservation request"
+    },
+    {
+      "id": "edge-7273b22c533382d4",
+      "source": "Student Organization Officer",
+      "target": "Room Reservation Request",
+      "label": "submit",
+      "color": null,
+      "evidence": "submit a room reservation request"
+    },
+    {
+      "id": "edge-199470414dd8623e",
+      "source": "Room Reservation Request",
+      "target": "Event Title",
+      "label": "include",
+      "color": null,
+      "evidence": "include the event title"
+    },
+    {
+      "id": "edge-a1a27441477f8f22",
+      "source": "Room Reservation Request",
+      "target": "Requested Room",
+      "label": "include",
+      "color": null,
+      "evidence": "include the requested room"
+    },
+    {
+      "id": "edge-dde655e20526286a",
+      "source": "Room Reservation Request",
+      "target": "Expected Number of Attendees",
+      "label": "include",
+      "color": null,
+      "evidence": "include the expected number of attendees"
+    },
+    {
+      "id": "edge-291c0a0947328fb7",
+      "source": "Room Reservation Request",
+      "target": "Event Start and End Time",
+      "label": "include",
+      "color": null,
+      "evidence": "include the event start and end time"
+    },
+    {
+      "id": "edge-ee5d8683e152a342",
+      "source": "System",
+      "target": "Room Availability",
+      "label": "check",
+      "color": null,
+      "evidence": "check whether the room is available"
+    },
+    {
+      "id": "edge-abe4890df1a42f4e",
+      "source": "System",
+      "target": "Email Confirmation",
+      "label": "send",
+      "color": null,
+      "evidence": "send an email confirmation"
+    },
+    {
+      "id": "edge-719404255241592b",
+      "source": "System",
+      "target": "Email Confirmation",
+      "label": "send",
+      "color": null,
+      "evidence": "send an email confirmation to the student organization officer if the room is available"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-28T21:02:10.270748",
+    "source": "export:internal_json"
+  }
+}

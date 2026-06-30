@@ -1,0 +1,47 @@
+case_id,audit_id,generated_or_missing_structure,correctness,completeness,curation_action,rationale
+P1,P1-Q01,A has duplicate/overlapping System -> send -> Email Confirmation edges.,yes,partial,edit_and_extend,Confirmation relation is supported but redundant/overlapping.
+P1,P1-Q02,B captures System -> route -> Department Coordinator.,yes,partial,keep_and_extend,Routing is faithful but request object and before-confirmation context need extension.
+P1,P1-Q03,B captures Department Coordinator -> grant -> Approval.,partial,partial,edit_and_extend,"Approval is relevant, but exact subject/predicate relation is inferred/underspecified."
+P1,P1-Q04,B captures System -> check -> Approval.,partial,partial,edit_and_extend,Checking approval is an operationalization; approval-granted precondition should be explicit.
+P1,P1-Q05,B misses outside-building-hours condition.,missing,missing,add_missing,Important conditional trigger is absent.
+P1,P1-Q06,B misses attendance-greater-than-capacity condition.,missing,missing,add_missing,Important conditional trigger is absent.
+P1,P1-Q07,B captures required fields with include edges.,yes,partial,keep_and_extend,Core fields are captured; field requirements can be represented more explicitly.
+P1,P1-Q08,B captures System -> send -> Email Confirmation but not only-after room available and approval granted.,yes,partial,keep_and_extend,Action is present; preconditions are incomplete.
+P2,P2-Q01,A: System -> assign -> IT Support Ticket.,yes,partial,keep_and_extend,"Supported, but support technician target is missing."
+P2,P2-Q02,B: System -> route -> Security Team.,yes,partial,keep_and_extend,"Supported, but ticket as routed object is missing."
+P2,P2-Q03,B: Employee -> mark -> IT Support Ticket.,yes,partial,edit_and_extend,Marks ticket but missing explicit account access/suspicious email/data exposure trigger nodes.
+P2,P2-Q04,B misses Account Access Issue / Suspicious Email / Data Exposure trigger nodes.,missing,missing,add_missing,Key trigger conditions are absent as structured nodes.
+P2,P2-Q05,B: System -> notify -> Employee.,yes,partial,keep_and_extend,"Notification is supported, but only-after review/transfer precondition is missing."
+P2,P2-Q06,B: System -> store -> Security Review Record.,yes,complete,accept,Directly supported by text.
+P2,P2-Q07,A/B: IT Support Ticket -> include -> Problem Description / Device Type / Screenshots.,yes,partial,keep_and_extend,Core fields are supported; optionality and input action details are partial.
+P2,P2-Q08,B misses Security Team -> completes -> Security Review or transfers ticket back -> General Support.,missing,missing,add_missing,Key notification precondition events are absent.
+P3,P3-Q01,A: System -> charge -> Saved Payment Method.,yes,partial,keep_and_extend,Charge is supported but immediately-after-submit timing is absent.
+P3,P3-Q02,B: System -> charge -> Saved Payment Method.,yes,partial,keep_and_extend,Charge is supported but only-after availability precondition is absent.
+P3,P3-Q03,B: System -> create -> Pending Order Record.,yes,complete,accept,Directly supported.
+P3,P3-Q04,B: System -> reserve -> Product.,yes,partial,keep_and_extend,Reserve is supported; selected-products scope and concurrent inventory check are incomplete.
+P3,P3-Q05,B: System -> check -> Inventory Availability.,yes,partial,keep_and_extend,Inventory check is supported; selected-products scope/payment linkage is incomplete.
+P3,P3-Q06,B: System -> ask -> Customer.,yes,partial,edit_and_extend,Ask action is supported; revise-order object and before-payment precondition are missing.
+P3,P3-Q07,B misses products_confirmed_available_state -> has_precondition_for -> charge_payment_action.,missing,missing,add_missing,Payment timing precondition missing.
+P3,P3-Q08,B misses unavailable_products_condition -> triggers -> order_revision_request.,missing,missing,add_missing,Exception path trigger missing.
+P3,P3-Q09,B: System -> send -> Order Receipt.,yes,partial,keep_and_extend,Receipt action supported; only-after payment completed is missing.
+P3,P3-Q10,A/B common inputs: Online Order -> include Product / Shipping Address / Saved Payment Method.,yes,partial,keep_and_extend,Inputs are captured; selectedness/role scope can be extended.
+P4,P4-Q01,A: Student -> submit -> Assignment.,yes,partial,keep_and_extend,Correct but incomplete: before deadline/submission event missing.
+P4,P4-Q02,B: Student Team -> submit -> Assignment.,yes,partial,keep_and_extend,Correct but incomplete: one assignment and before deadline missing.
+P4,P4-Q03,B: Student Team -> upload -> File.,yes,partial,keep_and_extend,Correct but incomplete: one shared file/team scope missing.
+P4,P4-Q04,B: Student Team -> add -> Comment.,yes,partial,keep_and_extend,Correct but incomplete: optionality and team submission scope missing.
+P4,P4-Q05,B: System -> store -> File.,yes,partial,keep_and_extend,Correct but incomplete: file-as-team-submission missing.
+P4,P4-Q06,B: System -> link -> Submission Record.,partial,partial,edit_and_extend,Link action captured but target every team member omitted.
+P4,P4-Q07,B: System -> show -> Team Grade / Feedback.,yes,partial,keep_and_extend,"Correct but incomplete: to each team member, after grading, unless override missing."
+P4,P4-Q08,B missing Individual Override Grade -> applies_to -> Specific Team Member.,missing,missing,add_missing,Exception is absent in triple graph.
+P4,P4-Q09,B: System -> mark -> Late Submissions / Team Submission Record.,partial,partial,edit_and_extend,Late/team record captured but relation is unclear and negative constraint missing.
+P4,P4-Q10,B missing negative constraint late_status_not_marked_separately_for_each_member.,missing,missing,add_missing,Negative constraint is absent.
+P5,P5-Q01,B: Student -> request -> Projector.,yes,partial,keep_and_extend,Projector request faithful; optionality and downstream condition need extension.
+P5,P5-Q02,B: System -> check -> Room Availability.,yes,partial,keep_and_extend,Supported; conditional trigger and before-reservation precondition missing.
+P5,P5-Q03,B: System -> check -> Projector Availability.,yes,partial,keep_and_extend,Supported; triggering condition and timing under-specified.
+P5,P5-Q04,B: System -> create -> Reservation.,yes,partial,keep_and_extend,Supported; preconditions involving availability are missing.
+P5,P5-Q05,B: System -> offer -> Student.,yes,partial,edit_and_extend,Offer action supported; condition and options missing.
+P5,P5-Q06,B: System -> reserve -> Library Study Room.,yes,partial,keep_and_extend,Reserve-room alternative supported; without-projector constraint missing.
+P5,P5-Q07,B: Student -> choose -> Time Slot.,yes,partial,keep_and_extend,Different-time-slot alternative supported; alternative context under-specified.
+P5,P5-Q08,B: System -> describe -> Resources.,partial,partial,edit_and_extend,Related to source sentence but wrong subject and reserved-resource object missing. Final adjudication merged the separate missing confirmation-message row (P5-Q11) into this edit-and-extend item to avoid double counting.
+P5,P5-Q09,Missing: projector_requested_condition -> triggers -> projector_availability_check.,missing,missing,add_missing,Condition-to-check relation absent.
+P5,P5-Q10,Missing: projector_unavailable_condition -> triggers -> alternative_options.,missing,missing,add_missing,Exception path absent.

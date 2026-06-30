@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "Student",
+      "label": "Student",
+      "color": null
+    },
+    {
+      "id": "Library Study Room",
+      "label": "Library Study Room",
+      "color": null
+    },
+    {
+      "id": "Date",
+      "label": "Date",
+      "color": null
+    },
+    {
+      "id": "Time Slot",
+      "label": "Time Slot",
+      "color": null
+    },
+    {
+      "id": "Room Size",
+      "label": "Room Size",
+      "color": null
+    },
+    {
+      "id": "Number of Participants",
+      "label": "Number of Participants",
+      "color": null
+    },
+    {
+      "id": "Contact Email Address",
+      "label": "Contact Email Address",
+      "color": null
+    },
+    {
+      "id": "System",
+      "label": "System",
+      "color": null
+    },
+    {
+      "id": "Room Reservation",
+      "label": "Room Reservation",
+      "color": null
+    },
+    {
+      "id": "Confirmation Message",
+      "label": "Confirmation Message",
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-c811519bc4c6ade7",
+      "source": "Student",
+      "target": "Library Study Room",
+      "label": "reserve",
+      "color": null,
+      "evidence": "allow a student to reserve a library study room"
+    },
+    {
+      "id": "edge-b279780e339d9613",
+      "source": "Student",
+      "target": "Date",
+      "label": "select",
+      "color": null,
+      "evidence": "reserve a library study room for a selected date"
+    },
+    {
+      "id": "edge-e0390c75ffe4c46b",
+      "source": "Student",
+      "target": "Time Slot",
+      "label": "select",
+      "color": null,
+      "evidence": "reserve a library study room for a selected time slot"
+    },
+    {
+      "id": "edge-0dbd99391863c78b",
+      "source": "Student",
+      "target": "Room Size",
+      "label": "choose",
+      "color": null,
+      "evidence": "The student shall choose the room size"
+    },
+    {
+      "id": "edge-6eca0e5ea9870933",
+      "source": "Student",
+      "target": "Number of Participants",
+      "label": "enter",
+      "color": null,
+      "evidence": "enter the number of participants"
+    },
+    {
+      "id": "edge-987920ff3f3c4edf",
+      "source": "Student",
+      "target": "Contact Email Address",
+      "label": "provide",
+      "color": null,
+      "evidence": "provide a contact email address"
+    },
+    {
+      "id": "edge-8f6bb6a799545fe5",
+      "source": "System",
+      "target": "Library Study Room",
+      "label": "confirm",
+      "color": null,
+      "evidence": "After the system confirms that the room is available"
+    },
+    {
+      "id": "edge-477ff1e9ea501fb4",
+      "source": "System",
+      "target": "Room Reservation",
+      "label": "create",
+      "color": null,
+      "evidence": "it shall create the room reservation"
+    },
+    {
+      "id": "edge-612c4532d1986683",
+      "source": "System",
+      "target": "Confirmation Message",
+      "label": "send",
+      "color": null,
+      "evidence": "send a confirmation message to the student"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-29T05:47:34.317145",
+    "source": "export:internal_json",
+    "graphKind": "triple"
+  }
+}

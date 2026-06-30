@@ -1,0 +1,92 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:GeneratedOntology a owl:Ontology ;
+    rdfs:label "Generated Ontology" .
+
+ex:chargesPaymentMethod a owl:ObjectProperty ;
+    rdfs:label "Charges Payment Method" ;
+    rdfs:domain ex:OnlineOrder ;
+    rdfs:range ex:PaymentMethod .
+
+ex:choosesPaymentMethod a owl:ObjectProperty ;
+    rdfs:label "Chooses Payment Method" ;
+    rdfs:domain ex:Customer ;
+    rdfs:range ex:PaymentMethod .
+
+ex:createsOrderRecord a owl:ObjectProperty ;
+    rdfs:label "Creates Order Record" ;
+    rdfs:domain ex:OnlineOrder ;
+    rdfs:range ex:OrderRecord .
+
+ex:entersShippingAddress a owl:ObjectProperty ;
+    rdfs:label "Enters Shipping Address" ;
+    rdfs:domain ex:Customer ;
+    rdfs:range ex:ShippingAddress .
+
+ex:includesPurchasedProducts a owl:ObjectProperty ;
+    rdfs:label "Includes Purchased Products" ;
+    rdfs:domain ex:OrderRecord ;
+    rdfs:range ex:Product .
+
+ex:includesShippingAddress a owl:ObjectProperty ;
+    rdfs:label "Includes Shipping Address" ;
+    rdfs:domain ex:OrderRecord ;
+    rdfs:range ex:ShippingAddress .
+
+ex:selectsProducts a owl:ObjectProperty ;
+    rdfs:label "Selects Products" ;
+    rdfs:domain ex:Customer ;
+    rdfs:range ex:Product .
+
+ex:sendsOrderReceipt a owl:ObjectProperty ;
+    rdfs:label "Sends Order Receipt" ;
+    rdfs:domain ex:OnlineOrder ;
+    rdfs:range ex:OrderReceipt .
+
+ex:sentOnlyAfter a owl:ObjectProperty ;
+    rdfs:label "Sent Only After" ;
+    rdfs:domain ex:OrderReceipt ;
+    rdfs:range ex:OrderRecord .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "Submits" ;
+    rdfs:domain ex:Customer ;
+    rdfs:range ex:OnlineOrder .
+
+ex:includesPaymentStatus a owl:DatatypeProperty ;
+    rdfs:label "Includes Payment Status" .
+
+ex:OrderReceipt a owl:Class ;
+    rdfs:label "Order Receipt" ;
+    ex:sentOnlyAfter ex:OrderRecord .
+
+ex:Customer a owl:Class ;
+    rdfs:label "Customer" ;
+    ex:choosesPaymentMethod ex:PaymentMethod ;
+    ex:entersShippingAddress ex:ShippingAddress ;
+    ex:selectsProducts ex:Product ;
+    ex:submits ex:OnlineOrder .
+
+ex:PaymentMethod a owl:Class ;
+    rdfs:label "Payment Method" .
+
+ex:Product a owl:Class ;
+    rdfs:label "Product" .
+
+ex:ShippingAddress a owl:Class ;
+    rdfs:label "Shipping Address" .
+
+ex:OnlineOrder a owl:Class ;
+    rdfs:label "Online Order" ;
+    ex:chargesPaymentMethod ex:PaymentMethod ;
+    ex:createsOrderRecord ex:OrderRecord ;
+    ex:sendsOrderReceipt ex:OrderReceipt .
+
+ex:OrderRecord a owl:Class ;
+    rdfs:label "Order Record" ;
+    ex:includesPaymentStatus ex:includesPaymentStatus ;
+    ex:includesPurchasedProducts ex:Product ;
+    ex:includesShippingAddress ex:ShippingAddress .
+

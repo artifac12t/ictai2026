@@ -1,0 +1,63 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:EmailConfirmation a owl:Class ;
+    rdfs:label "Email Confirmation" ;
+    ex:sentOnlyAfter ex:Approval .
+
+ex:Event a owl:Class ;
+    rdfs:label "Event" .
+
+ex:GeneratedOntology a owl:Ontology .
+
+ex:Room a owl:Class ;
+    rdfs:label "Room" .
+
+ex:StudentOrganizationOfficer a owl:Class ;
+    rdfs:label "Student Organization Officer" ;
+    ex:submits ex:RoomReservationRequest .
+
+ex:hasEventEndTime a owl:DatatypeProperty ;
+    rdfs:label "has event end time" .
+
+ex:hasEventStartTime a owl:DatatypeProperty ;
+    rdfs:label "has event start time" .
+
+ex:hasEventTitle a owl:DatatypeProperty ;
+    rdfs:label "has event title" .
+
+ex:hasExpectedAttendees a owl:DatatypeProperty ;
+    rdfs:label "has expected attendees" .
+
+ex:hasRequestedRoom a owl:DatatypeProperty ;
+    rdfs:label "has requested room" .
+
+ex:hasRequiredField a owl:DatatypeProperty ;
+    rdfs:label "has required field" .
+
+ex:requiresApproval a owl:ObjectProperty ;
+    rdfs:label "requires approval" .
+
+ex:sentOnlyAfter a owl:ObjectProperty ;
+    rdfs:label "sent only after" .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "submits" .
+
+ex:DepartmentCoordinator a owl:Class ;
+    rdfs:label "Department Coordinator" .
+
+ex:RoomReservationRequest a owl:Class ;
+    rdfs:label "Room Reservation Request" ;
+    ex:hasRequiredField ex:EventEndTime,
+        ex:EventStartTime,
+        ex:EventTitle,
+        ex:ExpectedAttendees,
+        ex:RequestedRoom ;
+    ex:requiresApproval ex:Approval,
+        ex:DepartmentCoordinator .
+
+ex:Approval a owl:Class ;
+    rdfs:label "Approval" .
+

@@ -1,0 +1,79 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:GeneratedOntology a owl:Ontology ;
+    rdfs:label "Generated Ontology" .
+
+ex:hasComment a owl:ObjectProperty ;
+    rdfs:label "Has Comment" ;
+    rdfs:domain ex:AssignmentSubmission ;
+    rdfs:range ex:Comment .
+
+ex:hasFile a owl:ObjectProperty ;
+    rdfs:label "Has File" ;
+    rdfs:domain ex:AssignmentSubmission ;
+    rdfs:range ex:File .
+
+ex:shows a owl:ObjectProperty ;
+    rdfs:label "Shows" ;
+    rdfs:domain ex:Instructor ;
+    rdfs:range ex:Grade .
+
+ex:showsFeedback a owl:ObjectProperty ;
+    rdfs:label "Shows Feedback" ;
+    rdfs:domain ex:Instructor ;
+    rdfs:range ex:Feedback .
+
+ex:stores a owl:ObjectProperty ;
+    rdfs:label "Stores" ;
+    rdfs:domain ex:AssignmentSubmission ;
+    rdfs:range ex:SubmissionRecord .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "Submits" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:AssignmentSubmission .
+
+ex:Student a owl:Class ;
+    rdfs:label "Student" ;
+    ex:submits ex:AssignmentSubmission .
+
+ex:isLate a owl:DatatypeProperty ;
+    rdfs:label "Is Late" .
+
+ex:submissionDate a owl:DatatypeProperty ;
+    rdfs:label "Submission Date" .
+
+ex:submissionDeadline a owl:DatatypeProperty ;
+    rdfs:label "Submission Deadline" .
+
+ex:Comment a owl:Class ;
+    rdfs:label "Comment" .
+
+ex:Feedback a owl:Class ;
+    rdfs:label "Feedback" .
+
+ex:File a owl:Class ;
+    rdfs:label "File" .
+
+ex:Grade a owl:Class ;
+    rdfs:label "Grade" .
+
+ex:Instructor a owl:Class ;
+    rdfs:label "Instructor" ;
+    ex:shows ex:Grade ;
+    ex:showsFeedback ex:Feedback .
+
+ex:SubmissionRecord a owl:Class ;
+    rdfs:label "Submission Record" ;
+    ex:isLate ex:isLate ;
+    ex:submissionDate ex:submissionDate .
+
+ex:AssignmentSubmission a owl:Class ;
+    rdfs:label "Assignment Submission" ;
+    ex:hasComment ex:Comment ;
+    ex:hasFile ex:File ;
+    ex:stores ex:SubmissionRecord ;
+    ex:submissionDeadline ex:submissionDeadline .
+

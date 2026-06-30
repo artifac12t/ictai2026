@@ -1,0 +1,80 @@
+@prefix ex: <http://example.org/generated-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:GeneratedOntology a owl:Ontology ;
+    rdfs:label "Generated Ontology" .
+
+ex:checksAvailability a owl:ObjectProperty ;
+    rdfs:label "Checks Availability" ;
+    rdfs:domain ex:RoomReservationRequest ;
+    rdfs:range ex:StudyRoom .
+
+ex:checksProjectorAvailability a owl:ObjectProperty ;
+    rdfs:label "Checks Projector Availability" ;
+    rdfs:domain ex:RoomReservationRequest ;
+    rdfs:range ex:Projector .
+
+ex:describesResources a owl:ObjectProperty ;
+    rdfs:label "Describes Resources" ;
+    rdfs:domain ex:ReservationConfirmation ;
+    rdfs:range ex:StudyRoom .
+
+ex:offersAlternative a owl:ObjectProperty ;
+    rdfs:label "Offers Alternative" ;
+    rdfs:domain ex:RoomReservationRequest ;
+    rdfs:range ex:StudyRoom .
+
+ex:requiresApproval a owl:ObjectProperty ;
+    rdfs:label "Requires Approval" ;
+    rdfs:domain ex:RoomReservationRequest ;
+    rdfs:range ex:StudyRoom .
+
+ex:sendsConfirmation a owl:ObjectProperty ;
+    rdfs:label "Sends Confirmation" ;
+    rdfs:domain ex:RoomReservationRequest ;
+    rdfs:range ex:ReservationConfirmation .
+
+ex:submits a owl:ObjectProperty ;
+    rdfs:label "Submits" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:RoomReservationRequest .
+
+ex:Student a owl:Class ;
+    rdfs:label "Student" ;
+    ex:submits ex:RoomReservationRequest .
+
+ex:hasContactEmail a owl:DatatypeProperty ;
+    rdfs:label "Has Contact Email" .
+
+ex:hasNumberOfParticipants a owl:DatatypeProperty ;
+    rdfs:label "Has Number Of Participants" .
+
+ex:hasRoomSize a owl:DatatypeProperty ;
+    rdfs:label "Has Room Size" .
+
+ex:requestsProjector a owl:DatatypeProperty ;
+    rdfs:label "Requests Projector" .
+
+ex:Projector a owl:Class ;
+    rdfs:label "Projector" .
+
+ex:ReservationConfirmation a owl:Class ;
+    rdfs:label "Reservation Confirmation" ;
+    ex:describesResources ex:StudyRoom .
+
+ex:RoomReservationRequest a owl:Class ;
+    rdfs:label "Room Reservation Request" ;
+    ex:checksAvailability ex:StudyRoom ;
+    ex:checksProjectorAvailability ex:Projector ;
+    ex:hasContactEmail ex:hasContactEmail ;
+    ex:hasNumberOfParticipants ex:hasNumberOfParticipants ;
+    ex:hasRoomSize ex:hasRoomSize ;
+    ex:offersAlternative ex:StudyRoom ;
+    ex:requestsProjector ex:requestsProjector ;
+    ex:requiresApproval ex:StudyRoom ;
+    ex:sendsConfirmation ex:ReservationConfirmation .
+
+ex:StudyRoom a owl:Class ;
+    rdfs:label "Study Room" .
+

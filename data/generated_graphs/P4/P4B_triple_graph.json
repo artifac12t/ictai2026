@@ -1,0 +1,148 @@
+{
+  "nodes": [
+    {
+      "id": "Student Team",
+      "label": "Student Team",
+      "color": null
+    },
+    {
+      "id": "Assignment",
+      "label": "Assignment",
+      "color": null
+    },
+    {
+      "id": "File",
+      "label": "File",
+      "color": null
+    },
+    {
+      "id": "Comment",
+      "label": "Comment",
+      "color": null
+    },
+    {
+      "id": "System",
+      "label": "System",
+      "color": null
+    },
+    {
+      "id": "Submission Record",
+      "label": "Submission Record",
+      "color": null
+    },
+    {
+      "id": "Team Grade",
+      "label": "Team Grade",
+      "color": null
+    },
+    {
+      "id": "Feedback",
+      "label": "Feedback",
+      "color": null
+    },
+    {
+      "id": "Late Submissions",
+      "label": "Late Submissions",
+      "color": null
+    },
+    {
+      "id": "Team Submission Record",
+      "label": "Team Submission Record",
+      "color": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-8f7a24a4f06ca846",
+      "source": "Student Team",
+      "target": "Assignment",
+      "label": "submit",
+      "color": null,
+      "evidence": "allow a student team to submit one assignment"
+    },
+    {
+      "id": "edge-d2746148d9d5ef03",
+      "source": "Student Team",
+      "target": "File",
+      "label": "upload",
+      "color": null,
+      "evidence": "uploading one shared file"
+    },
+    {
+      "id": "edge-bc26e467e5f31d76",
+      "source": "Student Team",
+      "target": "Comment",
+      "label": "add",
+      "color": null,
+      "evidence": "adding an optional comment for the instructor"
+    },
+    {
+      "id": "edge-cc1050c03cffd526",
+      "source": "System",
+      "target": "File",
+      "label": "store",
+      "color": null,
+      "evidence": "store the file as the team submission"
+    },
+    {
+      "id": "edge-91900ee0beeefdd3",
+      "source": "System",
+      "target": "Submission Record",
+      "label": "link",
+      "color": null,
+      "evidence": "link the submission record to every team member"
+    },
+    {
+      "id": "edge-e818d2fdd11482e5",
+      "source": "System",
+      "target": "Team Grade",
+      "label": "show",
+      "color": null,
+      "evidence": "show the team grade"
+    },
+    {
+      "id": "edge-30999346bd28d4f3",
+      "source": "System",
+      "target": "Feedback",
+      "label": "show",
+      "color": null,
+      "evidence": "show the team grade and feedback"
+    },
+    {
+      "id": "edge-e4cba60903fbc4f4",
+      "source": "System",
+      "target": "Team Grade",
+      "label": "show",
+      "color": null,
+      "evidence": "show the team grade and feedback to each team member"
+    },
+    {
+      "id": "edge-84f37ad5c07ff306",
+      "source": "System",
+      "target": "Feedback",
+      "label": "show",
+      "color": null,
+      "evidence": "show the team grade and feedback to each team member"
+    },
+    {
+      "id": "edge-8d6e85a3c5b0efc0",
+      "source": "System",
+      "target": "Late Submissions",
+      "label": "mark",
+      "color": null,
+      "evidence": "Late submissions shall be marked as late for the team submission record"
+    },
+    {
+      "id": "edge-81e44b79e3308c4b",
+      "source": "System",
+      "target": "Team Submission Record",
+      "label": "mark",
+      "color": null,
+      "evidence": "Late submissions shall be marked as late for the team submission record, not separately for each member"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-29T04:56:21.854622",
+    "source": "export:internal_json"
+  }
+}
